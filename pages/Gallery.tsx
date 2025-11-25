@@ -1,12 +1,12 @@
 import React from 'react';
-import img1 from '../images/gallery-cafe-exterior.png';
-import img2 from '../images/menu-latte-art.png';
-import img3 from '../images/menu-coldbrew.png';
-import img4 from '../images/gallery-barista-hands.png';
-import img5 from '../images/menu-earlgrey.png';
-import img6 from '../images/hero-cafe-interior.png';
-import img7 from '../images/menu-financier.png';
-import img8 from '../images/menu-fruit-tart.png';
+import img1 from '../images/gallery-cafe-exterior.jpg';
+import img2 from '../images/menu-latte-art.jpg';
+import img3 from '../images/menu-coldbrew.jpg';
+import img4 from '../images/gallery-barista-hands.jpg';
+import img5 from '../images/menu-earlgrey.jpg';
+import img6 from '../images/hero-cafe-interior.jpg';
+import img7 from '../images/menu-financier.jpg';
+import img8 from '../images/menu-fruit-tart.jpg';
 
 const Gallery: React.FC = () => {
   const images = [
