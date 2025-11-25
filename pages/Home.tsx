@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Wifi, BatteryCharging, Coffee } from 'lucide-react';
-import heroImage from '../images/hero-cafe-interior.png';
-import latteArtImage from '../images/menu-latte-art.png';
+import heroImage from '../images/hero-cafe-interior.jpg';
+import latteArtImage from '../images/menu-latte-art.jpg';
 
 const Home: React.FC = () => {
   return (
