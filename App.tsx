@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center gap-2 font-serif text-xl md:text-2xl font-bold tracking-wider">
               <Coffee className="h-6 w-6 md:h-8 md:w-8 text-cafe-accent" />
-              <span>URBAN GRIND</span>
+              <span>KAZUSHI'S URBAN GRIND</span>
             </Link>
           </div>
           <div className="hidden md:block">
@@ -114,12 +114,23 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex items-start gap-2 text-sm font-light">
             <MapPin className="h-4 w-4 text-cafe-accent mt-1" />
-            <span>〒107-0062<br/>東京都港区南青山 5-12-3<br/>アーバンビル 1F</span>
+            <span>〒673-0891<br/>兵庫県明石市大明石町 1-1-1<br/>アーバンビル 1F</span>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Urban Grind Tokyo. All rights reserved.
+      <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+          <div className="flex gap-6 text-xs">
+            <a href="#" className="hover:text-cafe-accent transition-colors">プライバシーポリシー</a>
+            <a href="#" className="hover:text-cafe-accent transition-colors">利用規約</a>
+          </div>
+          <p className="text-xs text-gray-500 text-center">
+            &copy; {new Date().getFullYear()} Kazushi's Urban Grind. All rights reserved.
+          </p>
+        </div>
+        <p className="text-center text-xs text-gray-600 mt-2">
+          ※このサイトはポートフォリオ用の架空店舗です。
+        </p>
       </div>
     </footer>
   );

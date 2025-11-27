@@ -1,5 +1,5 @@
 import React from 'react';
-import menuHeaderImage from '../images/menu-lumen-latte.png';
+import menuHeaderImage from '../images/menu-lumen-latte.webp';
 
 interface MenuItemProps {
   name: string;
@@ -23,13 +23,17 @@ const MenuItem: React.FC<MenuItemProps> = ({ name, enName, description, price })
 );
 
 const Menu: React.FC = () => {
+  React.useEffect(() => {
+    document.title = "メニュー | Kazushi's Urban Grind";
+  }, []);
+
   return (
     <div className="bg-cafe-cream min-h-screen pb-20">
       {/* Header Image */}
       <div className="relative h-[40vh] w-full mb-16">
         <img 
           src={menuHeaderImage}
-          alt="Menu Header" 
+          alt="ルーメンラテ、カフェのシグネチャードリンク" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">

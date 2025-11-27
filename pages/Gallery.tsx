@@ -1,23 +1,27 @@
 import React from 'react';
-import img1 from '../images/gallery-cafe-exterior.jpg';
-import img2 from '../images/menu-latte-art.jpg';
-import img3 from '../images/menu-coldbrew.jpg';
-import img4 from '../images/gallery-barista-hands.jpg';
-import img5 from '../images/menu-earlgrey.jpg';
-import img6 from '../images/hero-cafe-interior.jpg';
-import img7 from '../images/menu-financier.jpg';
-import img8 from '../images/menu-fruit-tart.jpg';
+import img1 from '../images/gallery-cafe-exterior.webp';
+import img2 from '../images/menu-latte-art.webp';
+import img3 from '../images/menu-coldbrew.webp';
+import img4 from '../images/gallery-barista-hands.webp';
+import img5 from '../images/menu-earlgrey.webp';
+import img6 from '../images/hero-cafe-interior.webp';
+import img7 from '../images/menu-financier.webp';
+import img8 from '../images/menu-fruit-tart.webp';
 
 const Gallery: React.FC = () => {
+  React.useEffect(() => {
+    document.title = "ギャラリー | Kazushi's Urban Grind";
+  }, []);
+
   const images = [
-    { url: img1, span: 'col-span-1 md:col-span-2 row-span-2', height: 'h-96' }, // Exterior
-    { url: img2, span: 'col-span-1', height: 'h-48' }, // Latte Art
-    { url: img3, span: 'col-span-1', height: 'h-48' }, // Cold Brew
-    { url: img4, span: 'col-span-1 row-span-2', height: 'h-96' }, // Barista Hands
-    { url: img5, span: 'col-span-1', height: 'h-48' }, // Earl Grey
-    { url: img6, span: 'col-span-1 md:col-span-2', height: 'h-64' }, // Interior
-    { url: img7, span: 'col-span-1', height: 'h-64' }, // Financier
-    { url: img8, span: 'col-span-1 md:col-span-2', height: 'h-64' }, // Fruit Tart
+    { url: img1, span: 'col-span-1 md:col-span-2 row-span-2', height: 'h-96', alt: 'カフェの外観、アーバンビルの1階' },
+    { url: img2, span: 'col-span-1', height: 'h-48', alt: 'ラテアートのクローズアップ、ハート模様のミルクフォーム' },
+    { url: img3, span: 'col-span-1', height: 'h-48', alt: 'コールドブリューコーヒー、グラスに注がれた水出しコーヒー' },
+    { url: img4, span: 'col-span-1 row-span-2', height: 'h-96', alt: 'バリスタの手元、ハンドドリップでコーヒーを淹れる様子' },
+    { url: img5, span: 'col-span-1', height: 'h-48', alt: 'アールグレイティー、透明なグラスとティーバッグ' },
+    { url: img6, span: 'col-span-1 md:col-span-2', height: 'h-64', alt: 'カフェの店内、カウンター席と落ち着いた照明' },
+    { url: img7, span: 'col-span-1', height: 'h-64', alt: 'フィナンシェ、焼き菓子のクローズアップ' },
+    { url: img8, span: 'col-span-1 md:col-span-2', height: 'h-64', alt: 'フルーツタルト、季節のフルーツがのったタルト' },
   ];
 
   return (
@@ -40,7 +44,7 @@ const Gallery: React.FC = () => {
             >
               <img
                 src={img.url}
-                alt="Cafe Gallery"
+                alt={img.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />

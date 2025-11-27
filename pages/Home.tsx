@@ -1,44 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Wifi, BatteryCharging, Coffee } from 'lucide-react';
-import heroImage from '../images/hero-cafe-interior.jpg';
-import latteArtImage from '../images/menu-latte-art.jpg';
+import heroImage768 from '../images/hero-cafe-interior-768.webp';
+import heroImage1280 from '../images/hero-cafe-interior-1280.webp';
+import heroImage1920 from '../images/hero-cafe-interior-1920.webp';
+import latteArtImage from '../images/menu-latte-art.webp';
 
 const Home: React.FC = () => {
+  React.useEffect(() => {
+    document.title = "Kazushi's Urban Grind | 都会の喧騒を忘れる至福の一杯";
+  }, []);
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={heroImage}
-            alt="Japanese Cafe Interior" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
+          <picture>
+            <source media="(min-width: 1280px)" srcSet={heroImage1920} />
+            <source media="(min-width: 768px)" srcSet={heroImage1280} />
+            <img 
+              src={heroImage768}
+              alt="明石のカフェ店内、落ち着いた照明とカウンター席" 
+              className="w-full h-full object-cover"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <span className="text-cafe-accent font-medium tracking-[0.2em] text-sm md:text-base uppercase mb-4 block animate-fade-in">
             Est. 2025 Akashi
           </span>
-          <h1 className="text-4xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-5 leading-[1.2] drop-shadow-2xl">
             都会の喧騒を忘れる<br/>
-            <span className="italic text-cafe-accent">至福の一杯</span>
+            <span className="italic text-cafe-accent">至福のひととき</span>
           </h1>
-          <p className="text-gray-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light drop-shadow-md">
-            忙しい日常の中に、ほっと一息つける場所を。<br/>
-            厳選された豆と、心地よい空間がお待ちしています。
+          <p className="text-gray-100 text-base sm:text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg">
+            都会の喧騒を忘れて、丁寧に淹れた一杯でリセットできる場所。<br className="hidden sm:block"/>
+            オーナー Kazushi が選び抜いた豆と、こだわりの空間でお待ちしています。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/menu" 
-              className="px-8 py-3 bg-cafe-accent text-white font-medium rounded-sm hover:bg-white hover:text-cafe-black transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-cafe-accent text-white font-semibold text-base rounded-sm hover:bg-cafe-accent/90 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 shadow-xl"
             >
-              メニューを見る <ArrowRight className="h-4 w-4" />
+              メニューを見る <ArrowRight className="h-5 w-5" />
             </Link>
             <Link 
               to="/about" 
-              className="px-8 py-3 border border-white text-white font-medium rounded-sm hover:bg-white hover:text-cafe-black transition-all duration-300"
+              className="px-10 py-4 border-2 border-white/80 text-white font-medium text-base rounded-sm hover:bg-white hover:text-cafe-black transition-all duration-300"
             >
               私たちのこだわり
             </Link>
@@ -100,8 +110,9 @@ const Home: React.FC = () => {
         <div className="relative h-full">
            <img 
             src={latteArtImage}
-            alt="Latte Art" 
+            alt="ラテアートのクローズアップ、ハート模様のミルクフォーム" 
             className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
       </section>
